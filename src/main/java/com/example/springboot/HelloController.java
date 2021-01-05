@@ -1,7 +1,5 @@
 package com.example.springboot;
 
-import lombok.extern.log4j.Log4j;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -20,7 +18,7 @@ public class HelloController {
 			return String.format("Greetings from GUHADA service (%s): %s-%s",
 					VERSION, fqdn, address.getHostAddress());
 		} catch (Throwable t) {
-//			log.error("failed to get local addresses",t);
+			t.printStackTrace();
 		}
 		return String.format("Greetings from GUHADA service (%s) ", VERSION);
 	}
