@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import java.net.InetAddress;
 
 
-@Slf4j
+//@Slf4j
 @RestController
 public class HelloController {
 	private final static String VERSION = "v1";
@@ -20,7 +20,7 @@ public class HelloController {
 			return String.format("Greetings from GUHADA service (%s): %s-%s",
 					VERSION, fqdn, address.getHostAddress());
 		} catch (Throwable t) {
-			log.error("failed to get local addresses",t);
+//			log.error("failed to get local addresses",t);
 		}
 		return String.format("Greetings from GUHADA service (%s) ", VERSION);
 	}
