@@ -1,12 +1,13 @@
 package com.example.springboot;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.net.InetAddress;
 
 
-
+@Slf4j
 @RestController
 public class HelloController {
 	private final static String VERSION = "v1";
@@ -18,7 +19,7 @@ public class HelloController {
 			return String.format("Greetings from GUHADA service (%s): %s-%s",
 					VERSION, fqdn, address.getHostAddress());
 		} catch (Throwable t) {
-t.printStackTrace();
+			log.error("failed to get inet address ", t);
 		}
 		return String.format("Greetings from GUHADA service (%s) ", VERSION);
 	}
