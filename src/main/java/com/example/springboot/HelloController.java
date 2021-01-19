@@ -10,7 +10,7 @@ import java.net.InetAddress;
 @Slf4j
 @RestController
 public class HelloController {
-	private final static String VERSION = "v2";
+	private final static String VERSION = "v3";
 	@RequestMapping("/")
 	public String index() {
 		try {
